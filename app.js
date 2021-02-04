@@ -8,6 +8,7 @@ new Vue({
       changePercent:6,
       prices: [8400, 7900, 8200, 9000, 9400, 10000, 10200],
       price: 8400,
+      color:'f4f4f4',
 
       pricesWithDays: [
         { day: 'Lunes', value: 8400 },
@@ -27,6 +28,8 @@ new Vue({
   methods:{
     toggleShowPrices(){
       this.showPrices = !this.showPrices; 
+
+      this.color = this.color.split('').reverse().join('')
     }
 }
  
