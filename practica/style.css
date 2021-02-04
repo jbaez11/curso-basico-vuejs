@@ -1,0 +1,18 @@
+html {
+    padding: 20px;
+    color: #3d3d3d;
+  }
+  
+  body{
+    display: flex;
+    justify-content: center;
+  }
+  
+  #app{
+    background-color: rgb(226, 226, 226);
+    padding: 2rem 4rem;
+  }
+  
+  .red {
+    color: tomato;
+  }

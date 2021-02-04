@@ -1,0 +1,36 @@
+<body>
+    <div id="app">
+      <h1>
+        Mis Cursos💚
+      </h1>
+        <p>
+          <input v-model="title" type="text" placeholder="Titulo del curso"/>
+        </p>
+        <p>
+          <input v-model="time" type="number" placeholder="Horas"/>
+        </p>
+        <p>
+          <button @click="addCourse">Guardar Curso</button>
+        </p>
+      </fieldset>
+      <div>
+        <h3>Lista de Cursos</h3>
+        <p class="red" v-if="courses.length <= 0">Aun no has realizado cursos</p>
+        <div v-else>
+          <ol>
+            <li v-for="(course, index) in courses" :key="index">
+                {{course.title}} - {{course.time}} hours
+            </li>
+          </ol>
+          <hr/>
+          <p>
+            Llevo <strong>{{ totalTime }}</strong> horas aprendiendo 
+            <b>#NuncaParesDeAprender 💚</b>
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
