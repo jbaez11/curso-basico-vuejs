@@ -4,6 +4,7 @@ new Vue({
   data(){
     return {
       name:'Bitcoin',
+      symbol:'BTC',
       img: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png',
       changePercent:6,
       prices: [8400, 7900, 8200, 9000, 9400, 10000, 10200],
@@ -24,6 +25,18 @@ new Vue({
     }
     
     
+  },
+  computed: {
+    //funciones que siempre devulven un valor
+    title(){
+      return `${this.name} - ${this.symbol}`;
+    }
+  },
+  watch:{
+    //funciones el nombre de la funcion debe corresponder con una propiedad de la data()
+    showPrices(newVal, oldVal){
+      console.log(newVal, oldVal)
+    }
   },
   methods:{
     toggleShowPrices(){
