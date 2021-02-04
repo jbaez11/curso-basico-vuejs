@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Curso Basico de Vue.js | Platzi</title>
+  <title>Curso Basico de Vue.js</title>
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <div id="app">
     <img v-on:mouseover="toggleShowPrices" v-on:mouseout="toggleShowPrices" v-bind:src="img" v-bind:alt="name">
-    <h1>{{name}}
+    <h1 v-bind:class="changePercent > 5 ? 'green' : 'red'">{{name}}
       <span v-if="changePercent > 5">👍</span>
       <span v-else>👎</span>
     </h1>
@@ -21,7 +21,8 @@
       <li v-for="(p,i) in prices" v-bind:key="p">{{i}}--{{p}}</li>
     </ul>
     <ul v-show="showPrices">
-      <li v-for="(p,i) in pricesWithDays" v-bind:key="p.day">{{i}}--{{p.value}}-{{p.day}}</li>
+      
+      <li class="uppercase" v-bind:class="{orange: p.value == price, red : p.value < price, green : p.value > price}" v-for="(p,i) in pricesWithDays" v-bind:key="p.day">{{i}}--{{p.value}}-{{p.day}}</li>
     </ul>
   </div>
 
