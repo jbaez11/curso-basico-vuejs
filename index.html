@@ -17,6 +17,11 @@
 
     <span v-on:click="toggleShowPrices">{{showPrices ? '😑' : '😋'}}</span>
 
+    
+    <input type="number" v-model="value">
+    <span>{{convervetedValue}}</span>
+
+
     <ul v-show="showPrices">
       <li v-for="(p,i) in prices" v-bind:key="p">{{i}}--{{p}}</li>
     </ul>

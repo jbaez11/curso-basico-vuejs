@@ -10,6 +10,7 @@ new Vue({
       prices: [8400, 7900, 8200, 9000, 9400, 10000, 10200],
       price: 8400,
       color:'f4f4f4',
+      value:0,
 
       pricesWithDays: [
         { day: 'Lunes', value: 8400 },
@@ -30,6 +31,12 @@ new Vue({
     //funciones que siempre devulven un valor
     title(){
       return `${this.name} - ${this.symbol}`;
+    },
+    convervetedValue(){
+      if(!this.value){
+        return 0;
+      }
+      return this.value/this.price
     }
   },
   watch:{
