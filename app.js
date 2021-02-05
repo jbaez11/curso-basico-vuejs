@@ -41,6 +41,9 @@ Vue.component('CoinDetail', {
         <input type="number" v-model="value">
         <span>{{convervetedValue}}</span>
 
+        <slot name="text"></slot>
+        <slot name="link"></slot>
+
         <ul v-show="showPrices">
             <li v-for="(p,i) in prices" v-bind:key="p">{{i}}--{{p}}</li>
         </ul>
