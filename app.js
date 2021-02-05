@@ -22,8 +22,8 @@ Vue.component('CoinDetail', {
   methods:{
     toggleShowPrices(){
       this.showPrices = !this.showPrices; 
-
-      this.color = this.color.split('').reverse().join('')
+      this.$emit('change-color', this.showPrices ?  'FF96C8' : '3D3D3D')
+      
     }
   },
   template:`
@@ -96,13 +96,11 @@ new Vue({
     // showPrices(newVal, oldVal){
     //   console.log(newVal, oldVal)
     // }
-  }
-  // methods:{
-  //   toggleShowPrices(){
-  //     this.showPrices = !this.showPrices; 
-
-  //     this.color = this.color.split('').reverse().join('')
-  //   }
-  //  }
+  },
+   methods:{
+     updateColor(color){
+       this.color = color || this.color.split('').reverse().join('')
+     }
+    }
  
 })
